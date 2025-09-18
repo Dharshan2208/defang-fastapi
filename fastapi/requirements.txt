@@ -7,3 +7,4 @@ langgraph
 langchain_community
 langchain
 langchain_google_genai
+langchain_tavily

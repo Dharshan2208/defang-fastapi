@@ -3,3 +3,7 @@ fastapi
 uvicorn
 jinja2
 python-multipart
+langgraph
+langchain_community
+langchain
+langchain_google_genai

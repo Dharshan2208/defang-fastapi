@@ -13,8 +13,13 @@ from langgraph.checkpoint.memory import InMemorySaver
 from typing import Annotated
 from typing_extensions import TypedDict
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
+
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
+
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
@@ -25,8 +30,8 @@ class State(TypedDict):
 
 graph_builder = StateGraph(State)
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.7)
-tool = TavilySearch(max_results=10, return_direct=True)
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.6,api_key=GOOGLE_API_KEY)
+tool = TavilySearch(max_results=10, return_direct=True,api_key=TAVILY_API_KEY)
 tools = [tool]
 llm_with_tools = llm.bind_tools(tools)
 

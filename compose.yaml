@@ -8,9 +8,9 @@ services:
       - mode: ingress
         target: 8000
         published: 8000
-    environment:
-      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
-      TAVILY_API_KEY: ${TAVILY_API_KEY}
+    # environment:
+    #   GOOGLE_API_KEY: ${GOOGLE_API_KEY}
+    #   TAVILY_API_KEY: ${TAVILY_API_KEY}
     #deploy:
     #  resources:
     #    reservations:

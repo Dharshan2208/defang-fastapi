@@ -19,3 +19,8 @@ jobs:
 
     - name: Deploy
       uses: DefangLabs/defang-github-action@v1.1.0
+
+      env:
+        # these are GitHub secrets
+        GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}

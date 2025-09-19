@@ -16,10 +16,12 @@
 <body>
     <h2 style="text-align:center;">LangGraph Chatbot</h2>
     <div class="chat-box">
+        {% for msg in chat_history %}
             <div class="message">
                 <span class="{{ msg.role }}">{{ msg.role.capitalize() }}:</span>
                 <span>{{ msg.content }}</span>
             </div>
+        {% endfor %}
     </div>
     <form action="/send" method="post">
         <input type="text" name="message" placeholder="Type your message..." required>
